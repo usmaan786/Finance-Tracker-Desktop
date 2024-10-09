@@ -16,10 +16,10 @@ Planned Features For v1.0
 
 Tech Stack
 --------------------------
-C# .NET
-SQL Server Express
-Entity Framework Core
+-C# .NET
+-SQL Server Express
+-Entity Framework Core
 
 Future Tech Stack Goal
 --------------------------
-Cloud DB (AWS or Azure etc)
+-Cloud DB (AWS or Azure etc)

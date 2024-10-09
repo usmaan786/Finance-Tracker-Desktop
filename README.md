@@ -4,22 +4,22 @@ This project is for a Finance Tracker desktop application.
 
 Current Features
 -------------------------
-+Currency Converter (Requires testing and input validation checks).
+1.Currency Converter (Requires testing and input validation checks).
 
 Planned Features For v1.0
 --------------------------
-+Budget Tracker/Spending
-+Report on current spendings
-+Data visualisation of spendings
+1.Budget Tracker/Spending
+2.Report on current spendings
+3.Data visualisation of spendings
 
 
 
 Tech Stack
 --------------------------
-+C# .NET
-+SQL Server Express
-+Entity Framework Core
+1.C# .NET
+2.SQL Server Express
+3.Entity Framework Core
 
 Future Tech Stack Goal
 --------------------------
-+Cloud DB (AWS or Azure etc)
+1.Cloud DB (AWS or Azure etc)

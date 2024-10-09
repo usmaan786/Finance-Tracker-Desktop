@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Finance_Tracker
 {
-    class User : IUser
+    public class User : IUser
     {
+        public int Id { get; set; }
         public string Name { get; }
         public double CurrentSpending { get; private set; }
         public double Budget { get; private set; }

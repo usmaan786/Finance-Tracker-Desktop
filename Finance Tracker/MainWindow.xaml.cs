@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finance_Tracker.Data;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -55,9 +56,17 @@ namespace Finance_Tracker
 
         private void viewBtn_Click(object sender, RoutedEventArgs e)
         {
+            LoadDB dbRetrieve = new LoadDB();
+            dbRetrieve.LoadUserData();
+
             User usmaan = new User("Usmaan");
             usmaan.UpdateSpending("WoW Sub", 9.99, new DateTime(2024, 10, 09));
 
+            using (var context = new FinanceContext())
+            {
+                context.Users.Add(usmaan);
+                context.SaveChanges(); 
+            }
             string results = usmaan.DisplaySpendings();
             viewResultsTxt.Text = results;
         }

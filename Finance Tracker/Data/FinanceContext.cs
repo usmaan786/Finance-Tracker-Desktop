@@ -18,7 +18,7 @@ namespace Finance_Tracker.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=FinanceTracker;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=FinanceTracker;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -26,7 +26,7 @@ namespace Finance_Tracker.Data
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Spendings)
                 .WithOne()
-                .HasForeignKey("UserId");
+                .HasForeignKey(s => s.UserId);
 
             base.OnModelCreating(modelBuilder);
         }

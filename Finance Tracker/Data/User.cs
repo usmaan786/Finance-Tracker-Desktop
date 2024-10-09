@@ -10,12 +10,13 @@ namespace Finance_Tracker
     public class User : IUser
     {
         public int Id { get; set; }
-        public string Name { get; }
-        public double CurrentSpending { get; private set; }
-        public double Budget { get; private set; }
+        public string Name { get; set; }
+        public double CurrentSpending { get; set; }
+        public double Budget { get;  set; }
 
-        public List<Spending> Spendings { get; private set; }
+        public List<Spending> Spendings { get; set; }
 
+        public User() { }
         public User(string name) : this(name, 0.00, 0.00) 
         {
 

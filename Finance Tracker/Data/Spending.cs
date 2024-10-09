@@ -12,6 +12,13 @@ namespace Finance_Tracker
         public decimal Spent { get; }
         public DateTime TransactionDate { get; }
 
+        public Spending(string item, decimal spent, DateTime transactionDate)
+        {
+            Item = item;
+            Spent = spent;
+            TransactionDate = transactionDate;
+        }
+
         public string GetInfo()
         {
             return $"{Item} - {Spent} | Transaction Date: {TransactionDate.ToString()}";

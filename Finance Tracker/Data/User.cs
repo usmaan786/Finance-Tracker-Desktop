@@ -14,6 +14,19 @@ namespace Finance_Tracker
 
         public List<Spending> Spendings { get; private set; }
 
+        public User(string name) : this(name, 0.00m, 0.00m) 
+        {
+
+        }
+
+        public User(string name, decimal currentSpending, decimal budget)
+        {
+            Name = name;
+            CurrentSpending = currentSpending;
+            Budget = budget;
+            Spendings = new List<Spending>();
+        }
+
         public void UpdateBudget(decimal budget)
         {
             Budget = budget;

@@ -20,6 +20,11 @@ Tech Stack
 2.SQL Server Express
 3.Entity Framework Core
 
+API's
+--------------------------
+1.RestSharp
+2.ExchangeRate
+
 Future Tech Stack Goal
 --------------------------
 1.Cloud DB (AWS or Azure etc)

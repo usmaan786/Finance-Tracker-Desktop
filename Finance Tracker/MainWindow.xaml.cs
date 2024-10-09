@@ -21,6 +21,7 @@ namespace Finance_Tracker
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public ObservableCollection<string> CurrencyList = new ObservableCollection<string>
         {
         "USD", "GBP", "EUR", "JPY", "AUD"
@@ -50,6 +51,15 @@ namespace Finance_Tracker
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void viewBtn_Click(object sender, RoutedEventArgs e)
+        {
+            User usmaan = new User("Usmaan");
+            usmaan.UpdateSpending("WoW Sub", 9.99, new DateTime(2024, 10, 09));
+
+            string results = usmaan.DisplaySpendings();
+            viewResultsTxt.Text = results;
         }
     }
 }

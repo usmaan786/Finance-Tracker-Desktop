@@ -9,10 +9,10 @@ namespace Finance_Tracker
     public class Spending : ISpending
     {
         public string Item { get; }
-        public decimal Spent { get; }
+        public double Spent { get; }
         public DateTime TransactionDate { get; }
 
-        public Spending(string item, decimal spent, DateTime transactionDate)
+        public Spending(string item, double spent, DateTime transactionDate)
         {
             Item = item;
             Spent = spent;

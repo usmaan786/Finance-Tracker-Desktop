@@ -27,6 +27,8 @@
         </ComboBox>
 
         <Button x:Name="convertBtn" Content="Convert" HorizontalAlignment="Left" Margin="32,140,0,0" VerticalAlignment="Top" Width="76" Click="convertBtn_Click"/>
+        <TextBox x:Name="viewResultsTxt" HorizontalAlignment="Left" Margin="280,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="240"/>
+        <Button x:Name="viewBtn" Content="View" HorizontalAlignment="Left" Margin="353,312,0,0" VerticalAlignment="Top" Width="72" Click="viewBtn_Click"/>
 
     </Grid>
 </Window>

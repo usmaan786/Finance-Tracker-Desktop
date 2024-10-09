@@ -9,12 +9,12 @@ namespace Finance_Tracker
     interface IUser
     {
         string Name { get; }
-        decimal CurrentSpending { get; }
-        decimal Budget { get; }
+        double CurrentSpending { get; }
+        double Budget { get; }
         List<Spending> Spendings { get; }
 
-        void UpdateBudget(decimal budget);
-        void UpdateSpending(decimal spent);
+        void UpdateBudget(double budget);
+        void UpdateSpending(string item, double spent, DateTime transactionDate);
         string DisplaySpendings();
     }
 }

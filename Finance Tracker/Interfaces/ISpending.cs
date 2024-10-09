@@ -9,7 +9,7 @@ namespace Finance_Tracker
     interface ISpending
     {
         string Item { get; }
-        decimal Spent { get; }
+        double Spent { get; }
 
         DateTime TransactionDate { get; }
 

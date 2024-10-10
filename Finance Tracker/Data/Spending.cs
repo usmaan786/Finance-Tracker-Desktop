@@ -8,10 +8,14 @@ namespace Finance_Tracker
 {
     public class Spending : ISpending
     {
-        public string Item { get; }
-        public double Spent { get; }
-        public DateTime TransactionDate { get; }
+        public int Id { get; set; }
+        public string Item { get; set; }
+        public double Spent { get; set; }
+        public DateTime TransactionDate { get; set; }
 
+        public int UserId { get; set; }
+
+        public Spending() { }
         public Spending(string item, double spent, DateTime transactionDate)
         {
             Item = item;

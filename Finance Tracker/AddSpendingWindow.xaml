@@ -1,0 +1,48 @@
+﻿<Window x:Class="Finance_Tracker.AddSpendingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Finance_Tracker"
+        mc:Ignorable="d"
+        Title="AddSpendingWindow" Height="150" Width="250">
+    <Grid>
+        <TextBox x:Name="transactionItemTxt" HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+        <TextBox x:Name="amountTxt" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="dayTxt" HorizontalAlignment="Left" Margin="90,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="17" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="addSpendingBtn" Content="Add Expense" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Width="78" Click="addSpendingBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,21,0,0" TextWrapping="Wrap" Text="Transaction:" VerticalAlignment="Top" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,48,0,0" TextWrapping="Wrap" Text="Amount:" VerticalAlignment="Top" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="8,74,0,0" TextWrapping="Wrap" Text="Transaction Date:" VerticalAlignment="Top" Width="77" FontSize="10"/>
+        <TextBox x:Name="monthTxt" HorizontalAlignment="Left" Margin="112,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="17" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="yearTxt" HorizontalAlignment="Left" Margin="134,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+    </Grid>
+</Window>

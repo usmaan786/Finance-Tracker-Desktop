@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finance_Tracker.Data;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace Finance_Tracker
 {
@@ -32,6 +35,10 @@ namespace Finance_Tracker
             InitializeComponent();
             fromCurrenciesMenu.ItemsSource = CurrencyList;
             toCurrenciesMenu.ItemsSource = CurrencyList;
+
+            UpdateGreetings();
+            UpdateBudget();
+            UpdateCurrentSpending();
         }
 
         private async void convertBtn_Click(object sender, RoutedEventArgs e)
@@ -55,11 +62,34 @@ namespace Finance_Tracker
 
         private void viewBtn_Click(object sender, RoutedEventArgs e)
         {
-            User usmaan = new User("Usmaan");
-            usmaan.UpdateSpending("WoW Sub", 9.99, new DateTime(2024, 10, 09));
 
-            string results = usmaan.DisplaySpendings();
-            viewResultsTxt.Text = results;
+            UpdateExpenses();
         }
+
+        private void budgetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BudgetWindow budgetWindow = new BudgetWindow();
+            bool? dialogResult = budgetWindow.ShowDialog();
+
+            if(dialogResult == true)
+            {
+                UpdateBudget();
+            }
+            
+        }
+
+        private void addExpenseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddSpendingWindow addSpending = new AddSpendingWindow();
+            bool? dialogResult = addSpending.ShowDialog();
+
+            if(dialogResult == true)
+            {
+                UpdateCurrentSpending();
+                UpdateExpenses();
+            }
+        }
+
+        
     }
 }

@@ -16,7 +16,9 @@ namespace Finance_Tracker
 
         public List<Spending> Spendings { get; set; }
 
-        public User() { }
+        //Constructor EntityFramework -- need to set List of Spendings 
+        public User() { Spendings = new List<Spending>(); }
+
         public User(string name) : this(name, 0.00, 0.00) 
         {
 
@@ -37,6 +39,7 @@ namespace Finance_Tracker
 
         public void UpdateSpending(string item, double spent, DateTime transactionDate)
         {
+           
             CurrentSpending += spent;
             Spending transactionDetails = new Spending(item, spent, transactionDate);
             Spendings.Add(transactionDetails);

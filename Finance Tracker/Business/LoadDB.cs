@@ -77,5 +77,23 @@ namespace Finance_Tracker
                 }
             }
         }
+
+        public void AddUserSpending(string item, double amount, DateTime transactionDate)
+        {
+            using (var context = new FinanceContext())
+            {
+                _currentUser = context.Users.FirstOrDefault();
+
+                if( _currentUser != null )
+                {
+                    _currentUser.UpdateSpending(item, amount, transactionDate);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("User not found");
+                }
+            }
+        }
     }
 }

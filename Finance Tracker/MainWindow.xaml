@@ -33,6 +33,7 @@
         <Label x:Name="spendingStatusTxt" Content="Current Spending:" HorizontalAlignment="Left" Margin="19,64,0,0" VerticalAlignment="Top" Height="30" Width="226" FontWeight="Bold" FontSize="14" FontFamily="Calibri"/>
         <Label x:Name="budgetStatusTxt" Content="Budget:" HorizontalAlignment="Left" Margin="19,94,0,0" VerticalAlignment="Top" Height="30" Width="226" FontWeight="Bold" FontSize="14" FontFamily="Calibri"/>
         <Button x:Name="budgetBtn" Content="Update Budget" HorizontalAlignment="Left" Margin="342,362,0,0" VerticalAlignment="Top" Width="94" Click="budgetBtn_Click"/>
+        <Button x:Name="addExpenseBtn" Content="Add Expense" HorizontalAlignment="Left" Margin="342,394,0,0" VerticalAlignment="Top" Width="94" Click="addExpenseBtn_Click"/>
 
     </Grid>
 </Window>

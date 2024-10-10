@@ -96,5 +96,22 @@ namespace Finance_Tracker
             }
             
         }
+
+        private void addExpenseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddSpendingWindow addSpending = new AddSpendingWindow();
+            bool? dialogResult = addSpending.ShowDialog();
+
+            if(dialogResult == true)
+            {
+                string spending = loadDB.LoadUser("current spending");
+                spendingStatusTxt.Content = $"Current Spending: £{spending.ToString()}";
+
+                string results = loadDB.LoadUserData();
+                viewResultsTxt.Text = results;
+            }
+        }
+
+        //Add helper functions to load different data at request e.g. Load Current Spending on call.
     }
 }

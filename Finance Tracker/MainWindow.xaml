@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="fromCurrencyTxt" HorizontalAlignment="Left" Margin="72,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="73" Height="23"/>
-        <TextBox x:Name="toCurrencyTxt" HorizontalAlignment="Left" Margin="72,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="73" Height="23" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="fromCurrencyTxt" HorizontalAlignment="Left" Margin="81,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="73" Height="23"/>
+        <TextBox x:Name="toCurrencyTxt" HorizontalAlignment="Left" Margin="81,262,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="73" Height="23" IsReadOnlyCaretVisible="True"/>
         <ComboBox x:Name="fromCurrenciesMenu" 
           HorizontalAlignment="Left" 
-          Margin="10,45,0,0" 
+          Margin="19,217,0,0" 
           VerticalAlignment="Top" 
           Width="62" 
           Height="23">
@@ -20,15 +20,19 @@
 
         <ComboBox x:Name="toCurrenciesMenu" 
           HorizontalAlignment="Left" 
-          Margin="10,90,0,0" 
+          Margin="19,262,0,0" 
           VerticalAlignment="Top" 
           Width="62" 
           Height="23">
         </ComboBox>
 
-        <Button x:Name="convertBtn" Content="Convert" HorizontalAlignment="Left" Margin="32,140,0,0" VerticalAlignment="Top" Width="76" Click="convertBtn_Click"/>
+        <Button x:Name="convertBtn" Content="Convert" HorizontalAlignment="Left" Margin="41,312,0,0" VerticalAlignment="Top" Width="76" Click="convertBtn_Click"/>
         <TextBox x:Name="viewResultsTxt" HorizontalAlignment="Left" Margin="280,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="240"/>
         <Button x:Name="viewBtn" Content="View" HorizontalAlignment="Left" Margin="353,312,0,0" VerticalAlignment="Top" Width="72" Click="viewBtn_Click"/>
+        <Label x:Name="greetingsTxt" Content="Hello!" HorizontalAlignment="Left" Margin="19,21,0,0" VerticalAlignment="Top" Height="43" Width="226" FontWeight="Bold" FontSize="18" FontFamily="Calibri"/>
+        <Label x:Name="spendingStatusTxt" Content="Current Spending:" HorizontalAlignment="Left" Margin="19,64,0,0" VerticalAlignment="Top" Height="30" Width="226" FontWeight="Bold" FontSize="14" FontFamily="Calibri"/>
+        <Label x:Name="budgetStatusTxt" Content="Budget:" HorizontalAlignment="Left" Margin="19,94,0,0" VerticalAlignment="Top" Height="30" Width="226" FontWeight="Bold" FontSize="14" FontFamily="Calibri"/>
+        <Button x:Name="budgetBtn" Content="Update Budget" HorizontalAlignment="Left" Margin="342,362,0,0" VerticalAlignment="Top" Width="94" Click="budgetBtn_Click"/>
 
     </Grid>
 </Window>

@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace Finance_Tracker
 {
@@ -22,6 +24,7 @@ namespace Finance_Tracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        LoadDB loadDB = new LoadDB();
 
         public ObservableCollection<string> CurrencyList = new ObservableCollection<string>
         {
@@ -33,6 +36,15 @@ namespace Finance_Tracker
             InitializeComponent();
             fromCurrenciesMenu.ItemsSource = CurrencyList;
             toCurrenciesMenu.ItemsSource = CurrencyList;
+            
+            string user = loadDB.LoadUser("name");
+            greetingsTxt.Content = $"Hello, {user}!";
+
+            string spending = loadDB.LoadUser("current spending");
+            spendingStatusTxt.Content = $"Current Spending: £{spending.ToString()}";
+
+            string budget = loadDB.LoadUser("budget");
+            budgetStatusTxt.Content = $"Budget: £{budget}";
         }
 
         private async void convertBtn_Click(object sender, RoutedEventArgs e)
@@ -56,19 +68,33 @@ namespace Finance_Tracker
 
         private void viewBtn_Click(object sender, RoutedEventArgs e)
         {
-            LoadDB dbRetrieve = new LoadDB();
-            dbRetrieve.LoadUserData();
 
-            User usmaan = new User("Usmaan");
-            usmaan.UpdateSpending("WoW Sub", 9.99, new DateTime(2024, 10, 09));
+            string results = loadDB.LoadUserData();
+            viewResultsTxt.Text = results;
 
-            using (var context = new FinanceContext())
+            /*User usmaan = new User("Usmaan");
+            usmaan.UpdateSpending("WoW Sub", 9.99, new DateTime(2024, 10, 09));*/
+
+            /*using (var context = new FinanceContext())
             {
                 context.Users.Add(usmaan);
                 context.SaveChanges(); 
             }
-            string results = usmaan.DisplaySpendings();
-            viewResultsTxt.Text = results;
+            string results = usmaan.DisplaySpendings();*/
+            //viewResultsTxt.Text = results;
+        }
+
+        private void budgetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BudgetWindow budgetWindow = new BudgetWindow();
+            bool? dialogResult = budgetWindow.ShowDialog();
+
+            if(dialogResult == true)
+            {
+                string budget = loadDB.LoadUser("budget");
+                budgetStatusTxt.Content = $"Budget: £{budget}";
+            }
+            
         }
     }
 }

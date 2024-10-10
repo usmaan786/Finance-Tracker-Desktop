@@ -8,6 +8,8 @@ This project is for a Personal Finance Tracker desktop application.
 |------------------------|-------------|
 | Budget Tracker          | ✔         |
 | Total Spending Tracker  | ✔         |
+| Add Expenses to user    | ✔         |
+| Summary report on user expenses | ✔         |
 
 Planned Features For v1.0
 --------------------------

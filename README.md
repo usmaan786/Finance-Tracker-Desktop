@@ -11,12 +11,12 @@ This project is for a Personal Finance Tracker desktop application.
 | Add Expenses to user    | ✔         |
 | Summary report on user expenses | ✔         |
 
-Planned Features For v1.0
+To Do for v1.0
 --------------------------
-1.Budget Tracker/Spending
-2.Report on current spendings
-3.Data visualisation of spendings
-
+1. Data visualisation of spendings
+2. UI Visual cleanup
+3. Input Validation for all functions
+4. Unit Testing
 
 
 Tech Stack

@@ -9,10 +9,10 @@
     <Grid>
         <TextBox x:Name="transactionItemTxt" HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
         <TextBox x:Name="amountTxt" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
-        <TextBox x:Name="dayTxt" HorizontalAlignment="Left" Margin="90,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="dayTxt" HorizontalAlignment="Left" Margin="90,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="17" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
+                    <ScaleTransform ScaleX="1"/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>
@@ -23,20 +23,20 @@
         <TextBlock HorizontalAlignment="Left" Margin="32,21,0,0" TextWrapping="Wrap" Text="Transaction:" VerticalAlignment="Top" FontSize="10"/>
         <TextBlock HorizontalAlignment="Left" Margin="46,48,0,0" TextWrapping="Wrap" Text="Amount:" VerticalAlignment="Top" FontSize="10"/>
         <TextBlock HorizontalAlignment="Left" Margin="8,74,0,0" TextWrapping="Wrap" Text="Transaction Date:" VerticalAlignment="Top" Width="77" FontSize="10"/>
-        <TextBox x:Name="monthTxt" HorizontalAlignment="Center" Margin="0,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="monthTxt" HorizontalAlignment="Left" Margin="112,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="17" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
+                    <ScaleTransform ScaleX="1"/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="yearTxt" HorizontalAlignment="Left" Margin="138,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="yearTxt" HorizontalAlignment="Left" Margin="134,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
+                    <ScaleTransform ScaleX="1"/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>

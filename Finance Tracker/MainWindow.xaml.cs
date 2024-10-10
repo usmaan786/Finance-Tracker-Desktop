@@ -24,7 +24,6 @@ namespace Finance_Tracker
     /// </summary>
     public partial class MainWindow : Window
     {
-        LoadDB loadDB = new LoadDB();
 
         public ObservableCollection<string> CurrencyList = new ObservableCollection<string>
         {
@@ -36,15 +35,10 @@ namespace Finance_Tracker
             InitializeComponent();
             fromCurrenciesMenu.ItemsSource = CurrencyList;
             toCurrenciesMenu.ItemsSource = CurrencyList;
-            
-            string user = loadDB.LoadUser("name");
-            greetingsTxt.Content = $"Hello, {user}!";
 
-            string spending = loadDB.LoadUser("current spending");
-            spendingStatusTxt.Content = $"Current Spending: £{spending.ToString()}";
-
-            string budget = loadDB.LoadUser("budget");
-            budgetStatusTxt.Content = $"Budget: £{budget}";
+            UpdateGreetings();
+            UpdateBudget();
+            UpdateCurrentSpending();
         }
 
         private async void convertBtn_Click(object sender, RoutedEventArgs e)
@@ -69,19 +63,7 @@ namespace Finance_Tracker
         private void viewBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            string results = loadDB.LoadUserData();
-            viewResultsTxt.Text = results;
-
-            /*User usmaan = new User("Usmaan");
-            usmaan.UpdateSpending("WoW Sub", 9.99, new DateTime(2024, 10, 09));*/
-
-            /*using (var context = new FinanceContext())
-            {
-                context.Users.Add(usmaan);
-                context.SaveChanges(); 
-            }
-            string results = usmaan.DisplaySpendings();*/
-            //viewResultsTxt.Text = results;
+            UpdateExpenses();
         }
 
         private void budgetBtn_Click(object sender, RoutedEventArgs e)
@@ -91,8 +73,7 @@ namespace Finance_Tracker
 
             if(dialogResult == true)
             {
-                string budget = loadDB.LoadUser("budget");
-                budgetStatusTxt.Content = $"Budget: £{budget}";
+                UpdateBudget();
             }
             
         }
@@ -104,14 +85,11 @@ namespace Finance_Tracker
 
             if(dialogResult == true)
             {
-                string spending = loadDB.LoadUser("current spending");
-                spendingStatusTxt.Content = $"Current Spending: £{spending.ToString()}";
-
-                string results = loadDB.LoadUserData();
-                viewResultsTxt.Text = results;
+                UpdateCurrentSpending();
+                UpdateExpenses();
             }
         }
 
-        //Add helper functions to load different data at request e.g. Load Current Spending on call.
+        
     }
 }

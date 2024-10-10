@@ -21,15 +21,15 @@ To Do for v1.0
 
 Tech Stack
 --------------------------
-1.C# .NET
-2.SQL Server Express
-3.Entity Framework Core
+1. C# .NET
+2. SQL Server Express
+3. Entity Framework Core
 
 API's
 --------------------------
-1.RestSharp
-2.ExchangeRate
+1. RestSharp
+2. ExchangeRate
 
 Future Tech Stack Goal
 --------------------------
-1.Cloud DB (AWS or Azure etc)
+1. Cloud DB (AWS or Azure etc)

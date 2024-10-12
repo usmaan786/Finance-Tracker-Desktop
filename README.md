@@ -1,10 +1,15 @@
 **Finance Tracker App v0.1 (In-Development)**
 
-This project is for a Finance Tracker desktop application.
+This project is for a Personal Finance Tracker desktop application.
 
-Current Features
--------------------------
-1.Currency Converter (Requires testing and input validation checks).
+## Features
+
+| Feature                | Implemented |
+|------------------------|-------------|
+| Budget Tracker          | ✔         |
+| Total Spending Tracker  | ✔         |
+| Add Expenses to user    | ✔         |
+| Summary report on user expenses | ✔         |
 
 Planned Features For v1.0
 --------------------------

@@ -8,6 +8,9 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Images\Profile_avatar_placeholder_large.png" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
@@ -25,5 +28,9 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Profile_avatar_placeholder_large.png" />
   </ItemGroup>
 </Project>

@@ -22,7 +22,7 @@ namespace Finance_Tracker
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowView : Window
     {
 
         public ObservableCollection<string> CurrencyList = new ObservableCollection<string>
@@ -30,18 +30,20 @@ namespace Finance_Tracker
         "USD", "GBP", "EUR", "JPY", "AUD"
         };
 
-        public MainWindow()
+        public MainWindowView()
         {
             InitializeComponent();
-            fromCurrenciesMenu.ItemsSource = CurrencyList;
-            toCurrenciesMenu.ItemsSource = CurrencyList;
+            /*fromCurrenciesMenu.ItemsSource = CurrencyList;
+            toCurrenciesMenu.ItemsSource = CurrencyList;*/
 
+         
             UpdateGreetings();
             UpdateBudget();
             UpdateCurrentSpending();
+            UpdateExpenses();
         }
 
-        private async void convertBtn_Click(object sender, RoutedEventArgs e)
+        /*private async void convertBtn_Click(object sender, RoutedEventArgs e)
         {
             string fromCurrency = fromCurrenciesMenu.SelectedItem as string;
             string toCurrency = toCurrenciesMenu.SelectedItem as string;
@@ -58,6 +60,16 @@ namespace Finance_Tracker
                 MessageBox.Show(ex.Message);
             }
             
+        }*/
+
+        private void ExpensesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Handle selection changed event if needed
+            if (expensesListView.SelectedItem is Spending selectedSpending)
+            {
+                // You can now access selectedSpending.Item, selectedSpending.Spent, etc.
+                MessageBox.Show($"Selected: {selectedSpending.Item} - £{selectedSpending.Spent}");
+            }
         }
 
         private void viewBtn_Click(object sender, RoutedEventArgs e)
@@ -66,17 +78,6 @@ namespace Finance_Tracker
             UpdateExpenses();
         }
 
-        private void budgetBtn_Click(object sender, RoutedEventArgs e)
-        {
-            BudgetWindow budgetWindow = new BudgetWindow();
-            bool? dialogResult = budgetWindow.ShowDialog();
-
-            if(dialogResult == true)
-            {
-                UpdateBudget();
-            }
-            
-        }
 
         private void addExpenseBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -90,6 +91,18 @@ namespace Finance_Tracker
             }
         }
 
-        
+        private void budgetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BudgetWindow budgetWindow = new BudgetWindow();
+            bool? dialogResult = budgetWindow.ShowDialog();
+
+            if (dialogResult == true)
+            {
+                UpdateBudget();
+            }
+
+        }
+
+
     }
 }

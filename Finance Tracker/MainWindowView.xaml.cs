@@ -1,5 +1,4 @@
-﻿using Finance_Tracker.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,26 +15,10 @@ using System.Windows.Shapes;
 namespace Finance_Tracker
 {
     /// <summary>
-    /// Interaction logic for BudgetWindow.xaml
+    /// Interaction logic for MainWindowView.xaml
     /// </summary>
-    public partial class BudgetWindow : Window
+    public partial class MainWindowView : Window
     {
-        public BudgetWindow()
-        {
-            InitializeComponent();
-        }
-
-        private void budgetBtn_Click(object sender, RoutedEventArgs e)
-        {
-            LoadDB loadDB = new LoadDB();
-
-            loadDB.UpdateUserBudget(Double.Parse(budgetText.Text));
-            MessageBox.Show("Budget Updated");
-
-            this.DialogResult = true;
-            this.Close();
-
-        }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -67,5 +50,6 @@ namespace Finance_Tracker
                 this.DragMove();
             }
         }
+
     }
 }

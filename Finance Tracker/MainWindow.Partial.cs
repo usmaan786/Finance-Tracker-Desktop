@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Finance_Tracker
 {
-    public partial class MainWindow
+    public partial class MainWindowView
     {
         LoadDB loadDB = new LoadDB();
 
@@ -14,25 +15,26 @@ namespace Finance_Tracker
         {
             string name = loadDB.LoadUser("name");
 
-            greetingsTxt.Content = $"Hello,{name}!";
-        }
-
-        public void UpdateBudget()
-        {
-            string spending = loadDB.LoadUser("current spending");
-            spendingStatusTxt.Content = $"Current Spending: £{spending.ToString()}";
+            greetingsTxt.Text = $"Hello,{name}!";
         }
 
         public void UpdateCurrentSpending()
         {
+            string spending = loadDB.LoadUser("current spending");
+            spendingStatusTxt.Text = $"Current Spending: £{spending.ToString()}";
+        }
+
+        public void UpdateBudget()
+        {
             string budget = loadDB.LoadUser("budget");
-            budgetStatusTxt.Content = $"Budget: £{budget}";
+            budgetStatusTxt.Text = $"Budget: £{budget}";
         }
 
         public void UpdateExpenses()
         {
-            string results = loadDB.LoadUserData();
-            viewResultsTxt.Text = results;
+            var spendings = loadDB.LoadUserData();
+            expensesListView.ItemsSource = spendings;
         }
+
     }
 }

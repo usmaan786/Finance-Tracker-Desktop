@@ -4,45 +4,71 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Finance_Tracker"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
-        Title="AddSpendingWindow" Height="150" Width="250">
-    <Grid>
-        <TextBox x:Name="transactionItemTxt" HorizontalAlignment="Center" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
-        <TextBox x:Name="amountTxt" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
-        <TextBox x:Name="dayTxt" HorizontalAlignment="Left" Margin="90,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="17" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <Button x:Name="addSpendingBtn" Content="Add Expense" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Width="78" Click="addSpendingBtn_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,21,0,0" TextWrapping="Wrap" Text="Transaction:" VerticalAlignment="Top" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,48,0,0" TextWrapping="Wrap" Text="Amount:" VerticalAlignment="Top" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="8,74,0,0" TextWrapping="Wrap" Text="Transaction Date:" VerticalAlignment="Top" Width="77" FontSize="10"/>
-        <TextBox x:Name="monthTxt" HorizontalAlignment="Left" Margin="112,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="17" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <TextBox x:Name="yearTxt" HorizontalAlignment="Left" Margin="134,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
+        Title="AddSpendingWindow" Height="300" Width="500" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
 
+    <Grid>
+        <Border CornerRadius="10" Background="#FF0B1C52" Margin="10">
+            <Grid Margin="20">
+                <TextBlock Text="Transaction:" FontSize="10" Foreground="White" Background="#FF050F2F" Padding="5"/>
+                <TextBox x:Name="transactionItemTxt" HorizontalAlignment="Stretch" Margin="0,20,0,0" TextWrapping="Wrap"/>
+
+                <TextBlock Text="Amount:" FontSize="10" Foreground="White" Background="#FF050F2F" Padding="5" Margin="0,50,0,0"/>
+                <TextBox x:Name="amountTxt" HorizontalAlignment="Stretch" Margin="0,70,0,0" TextWrapping="Wrap"/>
+
+                <TextBlock Text="Transaction Date:" FontSize="10" Foreground="White" Background="#FF050F2F" Padding="5" Margin="0,100,0,0"/>
+
+                <!-- Move the date text boxes higher -->
+                <Grid Margin="0,0,0,0" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="5"/>
+                        <!-- Spacer -->
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="5"/>
+                        <!-- Spacer -->
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="275"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="dayTxt" Width="40" Height="25" TextWrapping="Wrap" Grid.Column="0"/>
+                    <TextBox x:Name="monthTxt" Width="40" Height="25" TextWrapping="Wrap" Grid.Column="2"/>
+                    <TextBox x:Name="yearTxt" Width="50" Height="25" TextWrapping="Wrap" Grid.Column="4"/>
+                </Grid>
+
+                <!-- Adjusted margin for the button to be directly below the date text boxes -->
+                <ui:Button x:Name="addSpendingBtn" Content="Add Expense" Margin="0,196,0,0" VerticalAlignment="Top" Width="121" Click="addSpendingBtn_Click" HorizontalAlignment="Center" Height="26">
+                    <ui:Button.Style>
+                        <Style TargetType="ui:Button">
+                            <Setter Property="Background" Value="#FF3A1EFF"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ui:Button">
+                                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="5">
+                                            <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FFBDC3C7"/>
+                                    <Setter Property="Background" Value="#FF3A1EFF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ui:Button.Style>
+                </ui:Button>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

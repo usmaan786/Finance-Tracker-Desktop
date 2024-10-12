@@ -3,12 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:Finance_Tracker"
         mc:Ignorable="d"
-        Title="BudgetWindow" Height="75" Width="150">
-    <Grid>
-        <TextBox x:Name="budgetText" HorizontalAlignment="Center" Margin="0,12,0,0" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="setBudgetBtn" Content="Set Budget" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Click="setBudgetBtn_Click"/>
+        Title="BudgetWindow" Height="250" Width="500" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
 
-    </Grid>
+    <Border CornerRadius="10" Background="#FF050F2F" Grid.ColumnSpan="2">
+        <Grid>
+            <DockPanel VerticalAlignment="Top" Height="40" Background="Transparent" Margin="169,0,10,0" MouseDown="Window_MouseDown">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <!-- OSX-style window buttons -->
+                    <ui:Button x:Name="MinimizeButton" Width="15" Height="14" Background="#FFBD44" BorderBrush="Transparent" CornerRadius="15" ToolTip="Minimize" Margin="5,0,0,0" Click="MinimizeButton_Click"/>
+                    <ui:Button x:Name="MaximizeRestoreButton" Width="15" Height="15" Background="#00CA4E" BorderBrush="Transparent" CornerRadius="15" ToolTip="Maximize/Restore" Margin="5,0,5,0" Click="MaximizeRestoreButton_Click"/>
+                    <ui:Button x:Name="CloseButton" Width="15" Height="15" Background="#FF605C" BorderBrush="Transparent" CornerRadius="15" ToolTip="Close" Click="CloseButton_Click"/>
+                </StackPanel>
+            </DockPanel>
+       
+            <ui:TextBox x:Name="budgetText" Margin="187,82,188,0" TextWrapping="NoWrap" Text="0.00" VerticalAlignment="Top" Height="28" FontSize="10" Width="125" TextAlignment="Center"/>
+            <ui:Button x:Name="setBudgetBtn" Background="#FF3A1EFF" Foreground="White" Content="Set Budget" Margin="190,146,191,62" FontSize="5" Click="budgetBtn_Click">
+                <ui:Button.Style>
+                    <Style TargetType="ui:Button">
+                        <Setter Property="Background" Value="#FF3A1EFF"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ui:Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                            BorderBrush="{TemplateBinding BorderBrush}" 
+                                            BorderThickness="{TemplateBinding BorderThickness}" 
+                                            CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                          VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#FFBDC3C7"/>
+                                <Setter Property="Background" Value="#FF3A1EFF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ui:Button.Style>
+            </ui:Button>
+        </Grid>
+    </Border>
 </Window>

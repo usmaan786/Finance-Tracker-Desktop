@@ -40,7 +40,7 @@ namespace Finance_Tracker
             return "";
         }
 
-        public string LoadUserData()
+        public List<Spending> LoadUserData()
         {
             using (var context = new FinanceContext())
             {
@@ -50,14 +50,14 @@ namespace Finance_Tracker
 
                 if (_currentUser != null)
                 {
-                    return _currentUser.DisplaySpendings();
+                    return _currentUser.Spendings; // Return the list of spendings
                 }
                 else
                 {
                     MessageBox.Show("User not found");
+                    return new List<Spending>(); // Return an empty list if no user is found
                 }
             }
-            return "";
         }
 
         public void UpdateUserBudget(double budget)

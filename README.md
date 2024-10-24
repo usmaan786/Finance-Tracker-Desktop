@@ -14,7 +14,6 @@ This project is for a Personal Finance Tracker desktop application.
 To Do for v1.0
 --------------------------
 1. Data visualisation of spendings
-2. UI Visual cleanup
 3. Input Validation for all functions
 4. Unit Testing
 
@@ -28,7 +27,7 @@ Tech Stack
 API's
 --------------------------
 1. RestSharp
-2. ExchangeRate
+2. ExchangeRate (REST API)
 
 Future Tech Stack Goal
 --------------------------

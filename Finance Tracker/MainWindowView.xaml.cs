@@ -20,6 +20,7 @@ namespace Finance_Tracker
     public partial class MainWindowView : Window
     {
 
+        //Logic for window control buttons
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -46,7 +47,7 @@ namespace Finance_Tracker
         {
             if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
             {
-                // Allow window dragging
+                
                 this.DragMove();
             }
         }

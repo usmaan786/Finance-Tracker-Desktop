@@ -67,7 +67,6 @@ namespace Finance_Tracker
             // Handle selection changed event if needed
             if (expensesListView.SelectedItem is Spending selectedSpending)
             {
-                // You can now access selectedSpending.Item, selectedSpending.Spent, etc.
                 MessageBox.Show($"Selected: {selectedSpending.Item} - £{selectedSpending.Spent}");
             }
         }

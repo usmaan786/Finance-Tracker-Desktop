@@ -7,6 +7,7 @@ using System.Windows.Controls;
 
 namespace Finance_Tracker
 {
+    //Logic for calling DB context operations
     public partial class MainWindowView
     {
         LoadDB loadDB = new LoadDB();

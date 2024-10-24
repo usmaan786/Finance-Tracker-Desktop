@@ -32,3 +32,5 @@ API's
 Future Tech Stack Goal
 --------------------------
 1. Cloud DB (AWS or Azure etc)
+
+![Preview Image]()
